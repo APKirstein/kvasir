@@ -1,0 +1,77 @@
+# Domain region_id: 10000043
+require "csv"
+require "HTTParty"
+require "pry"
+  @ids = {}
+  @list = []
+
+def db_connection
+  begin
+    connection = PG.connect(dbname: "kvasir_development")
+    yield(connection)
+  ensure
+    connection.close
+  end
+end
+
+# def import_ids
+#   CSV.foreach('type_ids.csv', headers: true) do |row|
+#     @ids[row[0]] = row[1]
+#   end
+# end
+
+def get_url
+  feeds=HTTParty.get("http://api.eve-marketdata.com/api/item_prices2.json?char_name=NocturnalWinters&type_ids=&region_ids=10000043&buysell=a")
+
+  feeds["emd"]["result"].each do |row|
+    row.each do |key, value|
+      binding.pry
+      @list << [value["typeID"], value["price"]]
+    end
+  end
+end
+
+# def list_items
+#   @list.each do |item|
+#     if @ids.has_key?(item["typeID"])
+#       item["name"] = @ids[item["typeID"]]
+#     end
+#   end
+#   return @list
+# end
+
+def import_sql
+  <<-SQL
+  INSERT INTO markets(
+    sale_type,
+    regionid,
+    typeid,
+    price,
+    info_date,
+    name
+  ) VALUES ($1, $2, $3, $4, $5, $6);
+  SQL
+end
+
+# def prepare_table
+#   <<-SQL
+#   TRUNCATE markets;
+#   SQL
+# end
+
+# def db_update
+#   # import_ids
+#   get_url
+#   # prepare_table
+#   update = []
+#   list_items.each do |item|
+#     update << item.values
+#   end
+#   db_connection do |conn|
+#     update.each do |line|
+#       conn.exec_params(import_sql, line)
+#     end
+#   end
+# end
+
+get_url

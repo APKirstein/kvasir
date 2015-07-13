@@ -1,27 +1,33 @@
-<script src="cAlert.js"></script>
-
+<div class="level3">
+	<h3>Update at: <p id="time"></p></h3>
+	<table>
+		<tr>
+			<th>Station</th>
+			<th>Item</th>
+			<th>Price</th>
+			<% if current_user %>
+				<th>Kvasir Index</th>
+			<% end %>
+		</tr>
+		<% @items.each do |item, value| %>
+			<tr>
+				<td id="regionid">Amarr</td>
+				<td id="name"><%= item.name %></td>
+				<td id="price"><%= item.price %></td>
+				<td id="price"><%= item.price %></td>
+				<% if current_user %>
+					<td id="kvasir">(kvasir index)</td>
+				<% end %>
+			</tr>
+		<% end %>
+	</table>
+</div>
+<div class="row">
+	<p><%= paginate @items %></p>
+</div>
 <ul id="header">
 	<li><%= link_to "Home", root_path %></li>
 </ul>
-
-<p>Build process initiated...</p>
-
-<div class="level3">
-	<table>
-		<tr>
-			<th>Time Stamp</th>
-			<th>Market</th>
-			<th>(XNCSX)</th>
-		</tr>
-		<tr>
-			<td style="color:blue" id="time">(time stamp)</td>
-			<td style="color:red" id="market">(Feedjira)</td>
-			<td style="color:red" id="kvasir">(Kvasir)</td>
-		</tr>
-	</table>
-</div>
 <div class="level4">
-	<p id="test">Refresh</p>
-	<button type="button" onclick="myFunction()">Refresh</button>
 	<script src="nccsScripts.js"></script>
 </div>

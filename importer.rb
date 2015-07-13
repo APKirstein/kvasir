@@ -18,7 +18,7 @@ def import_ids
 end
 
 def get_url
-  feeds=HTTParty.get("http://api.eve-marketdata.com/api/item_prices2.json?char_name=NocturnalWinters&type_ids=&region_ids=10000043&buysell=a")
+  feeds=HTTParty.get("http://api.eve-marketdata.com/api/item_prices2.json?char_name=NocturnalWinters&type_ids=34133&region_ids=10000043&buysell=a")
 
   feeds["emd"]["result"].each do |row|
     row.each do |key, value|
