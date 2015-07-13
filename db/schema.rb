@@ -16,6 +16,11 @@ ActiveRecord::Schema.define(version: 20150713132253) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "items", force: :cascade do |t|
+    t.integer "user_id",   null: false
+    t.integer "market_id", null: false
+  end
+
   create_table "markets", force: :cascade do |t|
     t.string  "sale_type", null: false
     t.string  "name",      null: false
@@ -23,11 +28,6 @@ ActiveRecord::Schema.define(version: 20150713132253) do
     t.integer "typeid",    null: false
     t.float   "price",     null: false
     t.date    "info_date", null: false
-  end
-
-  create_table "trackeds", force: :cascade do |t|
-    t.integer "user_id",   null: false
-    t.integer "market_id", null: false
   end
 
   create_table "users", force: :cascade do |t|
