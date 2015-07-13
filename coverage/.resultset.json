@@ -1,0 +1,40 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/NocturnalReign/Dropbox/kvasir/app/models/user.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/NocturnalReign/Dropbox/kvasir/app/models/market.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/NocturnalReign/Dropbox/kvasir/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/Users/NocturnalReign/Dropbox/kvasir/app/controllers/homes_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1436799256
+  }
+}
