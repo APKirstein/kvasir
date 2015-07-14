@@ -1,33 +1,42 @@
-<div class="level3">
-	<h3>Update at: <p id="time"></p></h3>
-	<table>
-		<tr>
-			<th>Station</th>
-			<th>Item</th>
-			<th>Price</th>
-			<% if current_user %>
-				<th>Kvasir Index</th>
-			<% end %>
-		</tr>
-		<% @items.each do |item, value| %>
+<div class="large-6 large-centered column">
+	<div class="table">
+		<h3>Eve time: <p id="time"></p></h3>
+		<table>
 			<tr>
-				<td id="regionid">Amarr</td>
-				<td id="name"><%= item.name %></td>
-				<td id="price"><%= item.price %></td>
-				<td id="price"><%= item.price %></td>
+				<th>Station</th>
+				<th>Item</th>
+				<th>Price</th>
 				<% if current_user %>
-					<td id="kvasir">(kvasir index)</td>
+					<th>Kvasir Index</th>
 				<% end %>
 			</tr>
-		<% end %>
-	</table>
+			<% @items.each do |item, value| %>
+				<tr>
+					<td id="regionid">Amarr</td>
+					<td id="name"><%= item.name %></td>
+					<% if item.sale_type == "b" %>
+						<td id="buy_price">Buy: <%= item.price %></td>
+					<% else %>
+						<td id="sell_price">Sell: <%= item.price %></td>
+					<% end %>
+					<% if current_user %>
+						<td id="kvasir">(kvasir index)</td>
+					<% end %>
+				</tr>
+			<% end %>
+		</table>
+	</div>
+	<div class="row">
+		<p><%= paginate @items %></p>
+	</div>
 </div>
-<div class="row">
-	<p><%= paginate @items %></p>
+
+<div class="large-6 large-centered column" id="footer">
+	<ul>
+		<li><%= link_to "Home", root_path %></li>
+	</ul>
 </div>
-<ul id="header">
-	<li><%= link_to "Home", root_path %></li>
-</ul>
+
 <div class="level4">
 	<script src="nccsScripts.js"></script>
 </div>

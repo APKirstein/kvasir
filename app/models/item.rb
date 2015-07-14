@@ -1,7 +1,10 @@
 class Item < ActiveRecord::Base
-  belongs_to :User
-  belongs_to :Market
+  has_many :users
 
-  validates :user_id, presence: true
-  validates :market_id, presence: true
+  validates :name, presence: true
+  validates :buy_price, presence: true
+  validates :sell_price, presence: true
+  validates :region, presence: true
+  validates :type, presence: true
+  validates :info_date, presence: true
 end
