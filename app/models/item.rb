@@ -5,6 +5,6 @@ class Item < ActiveRecord::Base
   validates :buy_price, presence: true
   validates :sell_price, presence: true
   validates :region, presence: true
-  validates :type, presence: true
+  validates :eve_type, presence: true
   validates :info_date, presence: true
 end

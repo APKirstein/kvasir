@@ -1,8 +1,8 @@
 class ItemsController < ApplicationController
-  layout 'markets_application'
+  layout 'items_application'
 
   def index
-    @items = Market.order("typeid").page
+    @items = Item.order("created_at").page
   end
 
 end

@@ -5,7 +5,7 @@ class CreateItems < ActiveRecord::Migration
       t.float :buy_price, null: false
       t.float :sell_price, null: false
       t.integer :region, null: false
-      t.integer :type, null: false
+      t.integer :eve_type, null: false
       t.datetime :info_date, null: false
 
       t.timestamps null: false
