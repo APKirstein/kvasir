@@ -4,7 +4,6 @@
   <title>Kvasir</title>
   <%= stylesheet_link_tag 'new_application', media: 'all' %>
   <%= csrf_meta_tags %>
-
 </head>
   <body>
 
@@ -30,5 +29,6 @@
     </section>
 
     <%= yield :extra_footer %>
+    <%= javascript_include_tag 'application' %>
   </body>
 </html>
