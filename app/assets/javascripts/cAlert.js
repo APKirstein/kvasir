@@ -1,1 +1,1 @@
-window.alert("Page under construction.");
+// window.alert("Page under construction.");

@@ -1,14 +1,41 @@
-<div class="level0">
-	<div class="level1">
-		<h1>Nocturnal Crimson Skies Corporation</h1>
-			<div class="level2">
-				<ul id="menu">
-					<li><%= link_to "NCCS Performance", markets_path %></li>
-					<li><a href="NCCSkvasir.html">Kvasir Engine</a></li>
-					<li><a href="NCCSmarket.html">Market Data</a></li>
-					<li><a href="NCCSportfolio.html">NCCS Porfolio</a></li>
-					<li><a href="cWebsite.html">Conversions</a></li>
-				</ul>
+<div class="header large-11 text-center">
+	<h1>Welcome to Kvasir Markets</h1>
+</div>
+
+<div class="row">
+	<div class="large-4 columns">
+		<div class="box" id="market_image">
+			<div class="content">
+				<a href="<%= items_path %>">Market Data<span></span></a>
+			</div>
+		</div>
+	</div>
+
+	<div class="large-4 columns">
+		<div class="box" id="buy_image">
+			<div class="content">
+				<a href="<%= tracked_items_path %>">My Items<span></span></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<br>
+<br>
+
+<div class="row">
+	<div class="large-4 columns">
+		<div class="box" id="port_image">
+			<div class="content">
+				<a href="<%= items_path %>">Portfolio<span></span></a>
+			</div>
+		</div>
+	</div>
+
+	<div class="large-4 columns">
+		<div class="box" id="item_image">
+			<div class="content">
+				<a href="<%= items_path %>">Item lookup<span></span></a>
 			</div>
 		</div>
 	</div>
