@@ -10,7 +10,7 @@
       <section class="top-bar-section">
 
         <ul class="right">
-          <li> <%= link_to 'Add Item', new_item_path %> </li>
+          <li>Welcome</li>
           <%- if !current_user.nil? && current_user.admin? -%>
             <li class="has-dropdown">
               <%= link_to 'admin', '#' %>
@@ -29,11 +29,10 @@
             </li>
             <!-- <div id=profile_pic> -->
             <li id=profile_pic>
-              <%= image_tag current_user.profile_photo, size: '25x25' %>
+
             </li>
             <!-- </div> -->
           <%- elsif current_user -%>
-            <%= image_tag current_user.profile_photo, size: '25x25', crop: :fill %>
             <li class="has-dropdown">
               <%= link_to current_user.username, "#" %>
               <ul class="dropdown">
