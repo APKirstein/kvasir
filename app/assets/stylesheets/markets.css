@@ -1,3 +1,12 @@
 body {
   background: url(/assets/Destruction.jpg), no-repeat center center fixed;
 }
+
+#footer {
+  align-items: center;
+  position: relative;
+	margin-top: -180px; /* negative value of footer height */
+	height: 180px;
+	clear:both;
+  text-align: center;
+}

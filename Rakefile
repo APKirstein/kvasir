@@ -4,8 +4,3 @@
 require File.expand_path('../config/application', __FILE__)
 
 Rails.application.load_tasks
-
-task :market_import do
-  require './importer'
-  db_import
-end

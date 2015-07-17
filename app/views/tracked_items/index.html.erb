@@ -1,0 +1,40 @@
+<div class="large-6 large-centered column">
+	<div class="table">
+		<h3>Eve time: <p id="time"></p></h3>
+		<table id="market_table">
+			<thead>
+				<tr>
+					<th>Station</th>
+					<th>Item</th>
+					<th>Buy Price</th>
+					<th>Sell Price</th>
+					<th>Kvasir Index</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @tracked_items.each do |item, value| %>
+					<tr>
+						<td id="regionid">Amarr</td>
+						<td id="name"><%= item.name %></td>
+						<td id="buy_price">Buy: <%= item.buy_price %></td>
+						<td id="sell_price">Sell: <%= item.sell_price %></td>
+						<td id="kvasir">(kvasir index)</td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+	<div class="row">
+		<p><%= paginate @tracked_items %></p>
+	</div>
+</div>
+
+<div class="large-6 large-centered column" id="footer">
+	<ul>
+		<li><%= link_to "Home", root_path %></li>
+	</ul>
+</div>
+
+<div class="level4">
+	<script src="nccsScripts.js"></script>
+</div>
