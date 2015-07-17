@@ -5,7 +5,7 @@ body {
 #footer {
   align-items: center;
   position: relative;
-	margin-top: -180px; /* negative value of footer height */
+	margin-top: auto; /* negative value of footer height */
 	height: 180px;
 	clear:both;
   text-align: center;

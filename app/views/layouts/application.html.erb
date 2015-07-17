@@ -7,33 +7,25 @@
 </head>
   <body>
 
-    <nav class="top-bar">
-      <ul class="title-area">
-        <li class="name">
-          <h1><a href="/">Kvasir</a></h1>
-        </li>
-      </ul>
+    <section class="top-bar-section">
+      <div class="off-canvas-wrap fixed" data-offcanvas>
+        <div class="inner-wrap">
+          <%= render "layouts/small_header" %>
+          <%= render "layouts/not_small_header" %>
+          <%= render "layouts/flash" %>
 
-      <section class="top-bar-section">
-        <ul class="right">
-          <%- if current_user -%>
-            <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-            <li><%= link_to 'Edit Account', edit_user_registration_path %></li>
-          <%- else -%>
-            <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-            <li><%= link_to 'Sign In', new_user_session_path %></li>
-          <%- end -%>
-        </ul>
-      </section>
-    </nav>
-
-    <%- flash.each do |key, value| -%>
-      <div class="flash flash-<%= key %>">
-        <%= value %>
+          <section class="main-section">
+            <div class="row">
+              <div class="small-12 small-centered columns text-center">
+                <%= yield %>
+              </div>
+            </div>
+          </section>
+          <a class="exit-off-canvas"></a>
+        </div>
       </div>
-    <%- end -%>
+    </section>
 
-    <%= yield %>
 
     <%= javascript_include_tag 'application' %>
     <%= yield :extra_footer %>

@@ -1,7 +1,7 @@
 # Domain region_id: 10000043
-require "csv"
-require "HTTParty"
-require "pry"
+# require "csv"
+# require "HTTParty"
+# require "pry"
 
 class Items
   attr_reader :name, :buy_price, :sell_price, :region, :eve_type, :info_date

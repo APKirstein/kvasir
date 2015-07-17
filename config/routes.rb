@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'homes#index'
   devise_for :users
 
-  resources :items, only: [:index, :show]
+  resources :items, only: [:index, :show, :create, :new]
 
   resources :tracked_items
 
