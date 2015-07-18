@@ -1,5 +1,5 @@
 class JitaController < ApplicationController
-  layout 'items_application'
+  layout "items_application"
 
   def index
   end

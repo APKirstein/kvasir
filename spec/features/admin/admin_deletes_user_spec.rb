@@ -20,7 +20,6 @@ feature 'admin deletes user', %{
   scenario 'admin deletes users' do
     sign_in_as(admin)
     visit admin_users_path
-
     click_button('Delete')
 
     expect(page).to have_content("Successfully deleted #{user.username}!")
