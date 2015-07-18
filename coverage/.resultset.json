@@ -35,6 +35,11 @@
         1,
         null
       ],
+      "/Users/NocturnalReign/Dropbox/kvasir/app/controllers/homes_controller.rb": [
+        1,
+        1,
+        null
+      ],
       "/Users/NocturnalReign/Dropbox/kvasir/app/controllers/application_controller.rb": [
         null,
         1,
@@ -45,9 +50,9 @@
         1,
         null,
         1,
-        8,
-        2,
-        2,
+        0,
+        0,
+        0,
         null,
         null,
         null,
@@ -64,8 +69,8 @@
         1,
         null,
         1,
-        26,
-        2,
+        4,
+        0,
         null,
         null,
         null,
@@ -74,7 +79,7 @@
         null,
         null,
         null,
-        26,
+        4,
         0,
         null,
         null,
@@ -86,11 +91,6 @@
         null,
         null,
         null,
-        null
-      ],
-      "/Users/NocturnalReign/Dropbox/kvasir/app/controllers/homes_controller.rb": [
-        1,
-        1,
         null
       ],
       "/Users/NocturnalReign/Dropbox/kvasir/app/controllers/items_controller.rb": [
@@ -100,45 +100,12 @@
         null,
         1,
         null,
-        4,
-        null,
-        null,
-        null
-      ],
-      "/Users/NocturnalReign/Dropbox/kvasir/app/controllers/admin/users_controller.rb": [
-        1,
-        1,
-        1,
-        null,
-        1,
-        4,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        0,
-        0,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
         1,
         null,
         null,
         null
       ]
     },
-    "timestamp": 1437253178
+    "timestamp": 1437254464
   }
 }
