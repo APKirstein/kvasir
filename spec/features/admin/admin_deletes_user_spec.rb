@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'admin deletes user', %{
+feature "admin deletes user", %{
   As an administrator of Kvasir Markets
   I want to delete a registered user
   So that I can remove trolls from the site.
@@ -14,23 +14,23 @@ feature 'admin deletes user', %{
   # [ ] I receive a confirmation when a user has been deleted
   # [ ] After deleting a user, I am redirected to the admin/users page
 
-  let!(:admin) { FactoryGirl.create(:user, admin: 't') }
+  let!(:admin) { FactoryGirl.create(:user, admin: "t") }
   let!(:user) { FactoryGirl.create(:user) }
 
-  scenario 'admin deletes users' do
+  scenario "admin deletes users" do
     sign_in_as(admin)
     visit admin_users_path
-    click_button('Delete')
+    click_button("Delete")
 
     expect(page).to have_content("Successfully deleted #{user.username}!")
     expect(page).to_not have_content(user.email)
   end
 
-  scenario 'unauthorized users are redirected' do
+  scenario "unauthorized users are redirected" do
     sign_in_as(user)
     visit admin_users_path
 
-    expect(page).to have_content('not authorized')
+    expect(page).to have_content("not authorized")
     expect(current_path).to eq(root_path)
   end
 end
