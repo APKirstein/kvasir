@@ -13,7 +13,7 @@ module Admin
     def update
       @user = User.find(params[:id])
       if @user.update_attributes(admin: "t")
-        flash[:success] = 'Changes saved successfully'
+        flash[:success] = "Changes saved successfully"
         redirect_to admin_users_path
       else
         flash[:notice] = @restaurant.errors.full_messages.join(". ")

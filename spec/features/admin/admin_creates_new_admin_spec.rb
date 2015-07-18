@@ -1,5 +1,4 @@
 require "rails_helper"
-
 feature "admin promotes new admin", %{
   As an administrator of Kvasir Markets
   I want to see a list of users via usernames and emails
