@@ -7,7 +7,6 @@ $(document).ready(function() {
       "item"  : $("input[tracked_item_item]").val()
     };
 
-    debugger
     $.ajax({
       type: $form.attr("method"),
       url: $form.attr("action"),
