@@ -29,11 +29,11 @@
             </li>
             <!-- <div id=profile_pic> -->
             <li id=profile_pic>
-              <%= image_tag current_user.profile_photo, size: '25x25' %>
+              <%= image_tag current_user.avatar, size: '25x25' %>
             </li>
             <!-- </div> -->
           <%- elsif current_user -%>
-            <%= image_tag current_user.profile_photo, size: '25x25', crop: :fill %>
+            <%= image_tag current_user.avatar, size: '25x25', crop: :fill %>
             <li class="has-dropdown">
               <%= link_to current_user.username, "#" %>
               <ul class="dropdown">
