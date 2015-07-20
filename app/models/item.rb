@@ -8,11 +8,10 @@ class Item < ActiveRecord::Base
   validates :eve_type, presence: true
   validates :info_date, presence: true
 
-  def self.search(search)
-    if search
-      where('name LIKE ?', "%#{search}%")
-    else
-      scoped
-    end
-  end
+  include PgSearch
+  pg_search_scope :search,
+  against: :name,
+  using: {
+  tsearch: { prefix: true }
+}
 end

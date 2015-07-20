@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.2.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
@@ -61,3 +61,4 @@ gem 'httparty'
 gem 'rake'
 gem 'kaminari'
 gem 'pry-byebug'
+gem 'pg_search', "~> 1.0.4"

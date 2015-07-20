@@ -6,6 +6,8 @@
         <%= text_field_tag :search, params[:search] %>
         <%= submit_tag "Search", :id => nil %>
       </p>
+		<% end %>
+		<% if !@item.empty? %>
       <div id="item"><%= render "table" %></div>
     <% end %>
 	</div>

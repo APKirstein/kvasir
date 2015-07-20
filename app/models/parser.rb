@@ -18,7 +18,7 @@ module Parser
 
     def get_data
       @list = Array.new
-      feeds = HTTParty.get("http://api.eve-marketdata.com/api/item_prices2.json?char_name=NocturnalWinters&type_ids=34133&region_ids=#{@market}&buysell=a")
+      feeds = HTTParty.get("http://api.eve-marketdata.com/api/item_prices2.json?char_name=NocturnalWinters&type_ids=&region_ids=#{@market}&buysell=a")
 
       feeds["emd"]["result"].each do |row|
         row.each do |key, value|
