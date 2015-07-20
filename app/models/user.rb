@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true
   validates :username, presence: true, length: { minimum: 3 }
 
-  mount_uploader :avatars, AvatarUploader
+  mount_uploader :avatar, AvatarUploader
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

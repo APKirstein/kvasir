@@ -32,7 +32,7 @@ class ApplicationController < ActionController::Base
         :email,
         :password,
         :password_confirmation,
-        :profile_photo
+        :avatar
       )
     end
 
@@ -43,7 +43,7 @@ class ApplicationController < ActionController::Base
         :password,
         :password_confirmation,
         :current_password,
-        :profile_photo
+        :avatar
       )
     end
   end

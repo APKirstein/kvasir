@@ -6,7 +6,10 @@
         <tr>
           <th>Name</th>
           <th>Username</th>
+          <th>Avatar</th>
           <th>Role</th>
+          <th>Make Admin</th>
+          <th>Delete</th>
         </tr>
       </thead>
       <tbody>
@@ -14,6 +17,11 @@
           <tr>
             <td><%= user.email %></td>
             <td><%= user.username %></td>
+            <td>
+              <% if user.avatar? %>
+                <%= image_tag user.avatar, size: '25x25' %>
+              <% end %>
+            </td>
             <td>
               <% if user.admin? %>
                 admin
