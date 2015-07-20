@@ -13,7 +13,7 @@ feature "user visits items search", %{
 
   let!(:user) { FactoryGirl.create(:user) }
 
-  context 'user is logged in', focus: true do
+  context 'user is logged in' do
     scenario 'user visits the items search' do
       sign_in_as(user)
       visit root_path

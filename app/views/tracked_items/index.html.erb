@@ -15,9 +15,9 @@
 				<% @tracked_items.each do |item, value| %>
 					<tr>
 						<td id="regionid">Amarr</td>
-						<td id="name"><%= item.name %></td>
-						<td id="buy_price">Buy: <%= item.buy_price %></td>
-						<td id="sell_price">Sell: <%= item.sell_price %></td>
+						<td id="name"><%= item.item.name %></td>
+						<td id="buy_price">Buy: <%= item.item.buy_price %></td>
+						<td id="sell_price">Sell: <%= item.item.sell_price %></td>
 						<td id="kvasir">(kvasir index)</td>
 					</tr>
 				<% end %>
