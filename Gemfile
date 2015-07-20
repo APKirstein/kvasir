@@ -56,6 +56,8 @@ gem 'rails_12factor', group: :production
 gem 'devise'
 gem 'foundation-rails'
 gem 'json'
+gem 'carrierwave'
+gem 'fog'
 gem 'httparty'
 gem 'rake'
 gem 'kaminari'
