@@ -13,24 +13,23 @@ feature 'user edits their login information', %{
   # [X] When I submit the form, my information is updated
   # [X] I will see a confirmation on my profile page when form is submitted
 
-  # scenario 'authenticated user edits profile information' do
-  #   user = FactoryGirl.create(:user)
-  #   sign_in_as(user)
-  #
-  #   expect(page).to have_content('Signed in successfully')
-  #
-  #   visit edit_user_registration_path
-  #
-  #   fill_in 'user[username]', with: 'newusername'
-  #   fill_in 'user[current_password]', with: user.password
-  #   attach_file('user[profile_photo]',
-  #     File.absolute_path('./spec/support/upload/image_upload.jpg'))
-  #
-  #   click_button 'Update'
-  #
-  #   page.should have_selector("img[src$='image_upload.jpg']")
-  #
-  #   expect(page).to have_content('newusername')
-  #   expect(page).to have_content("Your account has been updated successfully")
-  # end
+  scenario 'authenticated user edits profile information' do
+    user = FactoryGirl.create(:user)
+    sign_in_as(user)
+
+    expect(page).to have_content('Signed in successfully')
+
+    visit edit_user_registration_path
+
+    fill_in 'Username', with: 'newusername'
+    fill_in 'Current password', with: user.password
+    attach_file('Avatar',
+      File.absolute_path('./spec/support/upload/Ore_Frigate.jpg'))
+
+    click_button 'Update'
+    page.should have_selector("img[src$='Ore_Frigate.jpg']")
+
+    expect(page).to have_content('newusername')
+    expect(page).to have_content("Your account has been updated successfully")
+  end
 end

@@ -1,9 +1,9 @@
 # encoding: utf-8
 class AvatarUploader < CarrierWave::Uploader::Base
   # Choose what kind of storage to use for this uploader:
-  if Rails.env.production? || Rails.env.development?
+  if Rails.env.production?
     storage :fog
-  else
+  elsif Rails.env.development? || Rails.env.test?
     storage :file
   end
   # Override the directory where uploaded files will be stored.
