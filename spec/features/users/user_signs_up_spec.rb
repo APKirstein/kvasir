@@ -19,8 +19,12 @@ feature 'user registers', %Q{
     fill_in 'Username', with: 'johntest'
     fill_in 'Password', with: 'password'
     fill_in 'Password confirmation', with: 'password'
+    attach_file('user_avatar',
+      File.absolute_path('./spec/support/upload/Ore_Frigate.jpg'))
 
     click_button 'Sign up'
+
+    page.should have_selector("img[src$='Ore_Frigate.jpg']")
 
     expect(page).to have_content('Welcome! You have signed up successfully.')
     expect(page).to have_content('Sign Out')
