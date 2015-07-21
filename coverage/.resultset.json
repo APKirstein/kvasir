@@ -3,14 +3,30 @@
     "coverage": {
       "/Users/NocturnalReign/Dropbox/kvasir/app/models/user.rb": [
         1,
-        null,
-        null,
         1,
         null,
         1,
         1,
         null,
         1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/NocturnalReign/Dropbox/kvasir/app/uploaders/avatar_uploader.rb": [
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        0,
         null,
         null
       ],
@@ -152,6 +168,6 @@
         null
       ]
     },
-    "timestamp": 1437440106
+    "timestamp": 1437443374
   }
 }
