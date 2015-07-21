@@ -13,8 +13,8 @@ feature "user visits items search", %{
 
   let!(:user) { FactoryGirl.create(:user) }
 
-  context 'user is logged in' do
-    scenario 'user visits the items search' do
+  context "user is logged in" do
+    scenario "user visits the items search" do
       sign_in_as(user)
       visit root_path
       click_link("Item lookup")
@@ -22,7 +22,7 @@ feature "user visits items search", %{
       expect(page).to have_content("Search")
     end
 
-    scenario 'user visits the items index' do
+    scenario "user visits the items index" do
       sign_in_as(user)
       visit root_path
       click_link("Market Data")
@@ -31,15 +31,15 @@ feature "user visits items search", %{
     end
   end
 
-  context 'user is not logged in' do
-    scenario 'visitor visits the items index' do
+  context "user is not logged in" do
+    scenario "visitor visits the items index" do
       visit root_path
       click_link("Market Data")
 
       expect(page).to_not have_content("Kvasir Index")
     end
 
-    scenario 'visitor visits the items index' do
+    scenario "visitor visits the items index" do
       visit root_path
       click_link("Market Data")
 
