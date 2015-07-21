@@ -1,5 +1,5 @@
 class TrackedItemsController < ApplicationController
-  layout 'items_application'
+  layout "items_application"
   before_action :authenticate_user!
 
   def index
@@ -11,24 +11,25 @@ class TrackedItemsController < ApplicationController
   end
 
   def create
-    binding.pry
-    @tracked_item = TrackedItem.new(user: User.find(params[:tracked_item][:user]),
-      item: Item.find(params[:tracked_item][:item]))
+    @tracked_item = TrackedItem.new(
+    user: User.find(params[:tracked_item][:user]),
+    item: Item.find(params[:tracked_item][:item])
+    )
     respond_to do |format|
-    if @tracked_item.save
-      flash[:notice] = "Item added to my items"
-        format.html { redirect_to items_path}
-        format.json { render }
-    else
-      flash[:notice] = "There was an error, please consult your admin"
+      if @tracked_item.save
+        flash[:notice] = "Item added to my items"
+          format.html { redirect_to items_path}
+          format.json { render }
+      else
+        flash[:notice] = "There was an error, please consult your admin"
+      end
     end
   end
-  end
 
-  # protected
-  #
-  # def tracked_params
-  #   params.require(:tracked_item).permit(:item, :user)
-  # end
+  protected
+
+  def tracked_params
+    params.require(:tracked_item).permit(:item, :user)
+  end
 
 end

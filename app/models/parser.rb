@@ -1,6 +1,3 @@
-# require "httparty"
-# require "pry-byebug"
-# require "csv"
 require_relative "marketize"
 
 module Parser

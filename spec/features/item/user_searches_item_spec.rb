@@ -4,7 +4,6 @@ feature "user visits items search", %{
   I want to visit the items search
   So I can search for a specific item
 } do
-
   # Acceptance Criteria:
   # [ ] - I must be able to click link
   # [ ] - I must be able to see search field
@@ -46,5 +45,4 @@ feature "user visits items search", %{
       expect(page).to have_content("Sign In")
     end
   end
-
 end
