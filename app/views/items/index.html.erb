@@ -8,9 +8,11 @@
 					<th>Item</th>
 					<th>Buy Price</th>
 					<th>Sell Price</th>
+					<th>Data Date</th>
 					<% if current_user %>
 						<th>Kvasir Index</th>
 					<% end %>
+					<th>Add to MyItems</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -18,12 +20,20 @@
 					<tr>
 						<td id="regionid">Amarr</td>
 						<td id="name"><%= item.name %></td>
-						<td id="buy_price">Buy: <%= item.buy_price %></td>
-						<td id="sell_price">Sell: <%= item.sell_price %></td>
+						<td id="buy_price">Buy: <%= item.buy_price.round(2) %></td>
+						<td id="sell_price">Sell: <%= item.sell_price.round(2) %></td>
+						<td id="info_date">Date: <%= item.info_date %></td>
 						<% if current_user %>
-							<td id="kvasir">(kvasir index)</td>
-							<td><button id="save">Add</button></td>
+							<td id="kvasir"><%= (item.sell_price - item.buy_price).to_i %></td>
 						<% end %>
+						<td>
+							<%= form_for @tracked_item, html: { class: "button-to" } do |f| %>
+								<%= f.hidden_field :user, value: current_user.id %>
+								<%= f.hidden_field :item, value: item.id %>
+
+								<%= f.submit "Add", class: "add-button" %>
+							<% end %>
+						</td>
 					</tr>
 				<% end %>
 			</tbody>

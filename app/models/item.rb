@@ -7,4 +7,9 @@ class Item < ActiveRecord::Base
   validates :region, presence: true
   validates :eve_type, presence: true
   validates :info_date, presence: true
+
+  include PgSearch
+  pg_search_scope :search,
+  against: :name,
+  using: { tsearch: { prefix: true } }
 end
