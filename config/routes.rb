@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :jita
+  # resources :tracked_items, only: [:index]
   resources :items, only: [:index, :show, :create, :new]
-  resources :tracked_items
+  resources :tracked_items, only: [:new, :create], defaults: { format: 'json' }
 
   namespace :admin do
     resources :users
