@@ -27,11 +27,13 @@
 							<td id="kvasir"><%= (item.sell_price - item.buy_price).to_i %></td>
 						<% end %>
 						<td>
-							<%= form_for @tracked_item, html: { id: "button-to" } do |f| %>
-								<%= f.hidden_field :user, value: current_user.id %>
-								<%= f.hidden_field :item, value: item.id %>
+							<% unless @tracked_item.user_id == current_user.id %>
+								<%= form_for @tracked_item, html: { id: "button-#{item.id}" } do |f| %>
+									<%= f.hidden_field :user, value: current_user.id %>
+									<%= f.hidden_field :item, value: item.id %>
 
-								<%= f.submit "Add", id: "add-button" %>
+									<%= f.submit "Add", id: "add-button" %>
+								<% end %>
 							<% end %>
 						</td>
 					</tr>

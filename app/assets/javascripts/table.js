@@ -1,22 +1,28 @@
 $(document).ready(function() {
-  $("form#button-to").submit(function(event) {
+  $("form").submit(function(event) {
     event.preventDefault();
-    debugger
-    var url = $("form#button-to")[0].action
-    var method = $("form#button-to")[0].method
+
+    $form = $(event.currentTarget);
+
+    // $('form#button-to' + id + 'asdfadsf')
+
+    var url = $form[0].action
     var formData = {
-      "user"  : $(tracked_item_user).val(),
-      "item"  : $(tracked_item_item).val()
+      "user"  : $form.context[2].value,
+      "item"  : $form.context[3].value
     };
 
     $.ajax({
-      type: method,
-      url: url,
+      type: "POST",
+      url: "/tracked_items",
       data: formData,
       dataType: "json",
-      success: function() {
-        $("form#add-button").remove()
-        window.alert("Successfully created")
+      success: function(tracked_item) {
+        console.log(tracked_item)
+        $("#button-" + formData["item"] + " #add-button").remove();
+      },
+      error: function(unprocessable_entity) {
+        console.log(unprocessable_entity);
       }
     });
   });

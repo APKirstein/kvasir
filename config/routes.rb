@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :jita
   # resources :tracked_items, only: [:index]
   resources :items, only: [:index, :show, :create, :new]
+  resources :tracked_items, only: [:index]
   resources :tracked_items, only: [:new, :create], defaults: { format: 'json' }
 
   namespace :admin do

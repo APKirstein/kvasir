@@ -12,18 +12,18 @@ class TrackedItemsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @tracked_item = TrackedItem.new(
       user: User.find(params[:user].to_i),
       item: Item.find(params[:item].to_i)
     )
+    binding.pry
     respond_to do |format|
       if @tracked_item.save
-        flash[:notice] = "Item added to my items"
-          format.html { redirect_to items_path }
-          format.json { render :js => "alert('hello')" }
+        format.html { redirect_to :back, notice: "Item added to my items" }
+        format.json { render json: @tracked_item }
       else
-        flash[:notice] = "There was an error, please consult your admin"
+        format.html { redirect_to :back }
+        format.json { render json: @tracked_item.errors, status: :unprocessable_entity }
       end
     end
   end
