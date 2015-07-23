@@ -1,4 +1,3 @@
-require "pry-byebug"
 class TrackedItemsController < ApplicationController
   layout "items_application"
   before_action :authenticate_user!
@@ -16,7 +15,6 @@ class TrackedItemsController < ApplicationController
       user: User.find(params[:user].to_i),
       item: Item.find(params[:item].to_i)
     )
-    binding.pry
     respond_to do |format|
       if @tracked_item.save
         format.html { redirect_to :back, notice: "Item added to my items" }

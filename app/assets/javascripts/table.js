@@ -4,9 +4,7 @@ $(document).ready(function() {
 
     $form = $(event.currentTarget);
 
-    // $('form#button-to' + id + 'asdfadsf')
-
-    var url = $form[0].action
+    var url = $form[0].action;
     var formData = {
       "user"  : $form.context[2].value,
       "item"  : $form.context[3].value
