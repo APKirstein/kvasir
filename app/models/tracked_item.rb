@@ -4,4 +4,6 @@ class TrackedItem < ActiveRecord::Base
 
   validates :user_id, presence: true
   validates :item_id, presence: true
+
+  validates_uniqueness_of :item_id, scope: :user_id
 end

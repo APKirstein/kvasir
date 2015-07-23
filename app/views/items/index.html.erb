@@ -25,15 +25,18 @@
 						<td id="info_date">Date: <%= item.info_date %></td>
 						<% if current_user %>
 							<td id="kvasir"><%= (item.sell_price - item.buy_price).to_i %></td>
-							<td>
-								<%= form_for @tracked_item, html: { id: "button-to" } do |f| %>
+						<% end %>
+						<td>
+							<% unless @tracked_item.user_id == current_user.id %>
+								<%= form_for @tracked_item, html: { id: "button-#{item.id}" } do |f| %>
+
 									<%= f.hidden_field :user, value: current_user.id %>
 									<%= f.hidden_field :item, value: item.id %>
 
 									<%= f.submit "Add", id: "add-button" %>
 								<% end %>
-							</td>
-						<% end %>
+							<% end %>
+						</td>
 					</tr>
 				<% end %>
 			</tbody>

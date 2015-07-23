@@ -8,6 +8,7 @@
 					<th>Item</th>
 					<th>Buy Price</th>
 					<th>Sell Price</th>
+					<th>Date</th>
 					<th>Kvasir Index</th>
 				</tr>
 			</thead>
@@ -18,6 +19,7 @@
 						<td id="name"><%= item.item.name %></td>
 						<td id="buy_price">Buy: <%= item.item.buy_price %></td>
 						<td id="sell_price">Sell: <%= item.item.sell_price %></td>
+						<td id="info_date">Date: <%= item.item.info_date %></td>
 						<td id="kvasir">(kvasir index)</td>
 					</tr>
 				<% end %>

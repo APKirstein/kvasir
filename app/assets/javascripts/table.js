@@ -1,21 +1,27 @@
 $(document).ready(function() {
-  $(".button-to").submit(function(event) {
+  $("form").submit(function(event) {
+    event.preventDefault();
+
     $form = $(event.currentTarget);
 
+    var url = $form[0].action;
     var formData = {
-      "user"  : $("input[tracked_item_user]").val(),
-      "item"  : $("input[tracked_item_item]").val()
+      "user"  : $form.context[2].value,
+      "item"  : $form.context[3].value
     };
 
     $.ajax({
-      type: $form.attr("method"),
-      url: $form.attr("action"),
+      type: "POST",
+      url: "/tracked_items",
       data: formData,
       dataType: "json",
-      success: function() {
-        $form.remove()
+      success: function(tracked_item) {
+        console.log(tracked_item)
+        $("#button-" + formData["item"] + " #add-button").remove();
+      },
+      error: function(unprocessable_entity) {
+        console.log(unprocessable_entity);
       }
     });
-    event.preventDefault();
   });
 });
