@@ -1,42 +1,39 @@
-<div class="row">
-	<h1>Welcome to Kvasir Markets</h1>
-</div>
-
-<div class="row">
-	<div class="large-4 columns">
-		<div class="box" id="market_image">
-			<div class="content">
-				<a href="<%= items_path %>">Market Data<span></span></a>
-			</div>
-		</div>
+<div class="large-12 large-centered columns">
+	<div class="large-8 large-centered columns" id="title">
+		<h1>Welcome to Kvasir Markets</h1>
 	</div>
 
-	<div class="large-4 columns">
-		<div class="box" id="buy_image">
-			<div class="content">
-				<a href="<%= tracked_items_path %>">My Items<span></span></a>
+	<div class="large-16 large-centered columns" id="first">
+
+		<div class="large-4 columns">
+			<div>
+				<a href="<%= items_path %>">
+					<div class="content">
+						<img src="assets/markets.jpg">
+					</div>
+				</a>
 			</div>
 		</div>
-	</div>
-</div>
 
-<br>
-<br>
-
-<div class="row">
-	<div class="large-4 columns">
-		<div class="box" id="item_image">
-			<div class="content">
-				<a href="<%= item_path(id: 1) %>">Item lookup<span></span></a>
+		<div class="large-4 columns" id="my_items">
+			<div>
+				<a href="<%= tracked_items_path %>">
+					<div class="content">
+						<img src="assets/markets.jpg">
+					</div>
+				</a>
 			</div>
 		</div>
-	</div>
-	<div class="large-4 columns">
-		<div class="box" id="port_image">
-			<div class="content">
-				<a href="<%= jita_path %>">Jita Undock<span></span></a>
+
+		<div class="large-4 columns">
+			<div>
+				<a href="<%= jita_path %>">
+					<div class="content">
+						<img src="assets/markets.jpg">
+					</div>
+				</a>
 			</div>
 		</div>
-	</div>
 
+	</div>
 </div>

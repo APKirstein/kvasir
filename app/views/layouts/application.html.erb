@@ -8,16 +8,17 @@
 </head>
   <body>
 
+    <%= render "layouts/flash" %>
+
     <section class="top-bar-section">
       <div class="off-canvas-wrap fixed" data-offcanvas>
         <div class="inner-wrap">
           <%= render "layouts/small_header" %>
           <%= render "layouts/not_small_header" %>
-          <%= render "layouts/flash" %>
 
           <section class="main-section">
             <div class="row">
-              <div class="small-12 small-centered columns text-center">
+              <div class="large-12 large-centered columns text-center">
                 <%= yield %>
               </div>
             </div>
@@ -27,7 +28,7 @@
       </div>
     </section>
 
-
     <%= yield :extra_footer %>
+
   </body>
 </html>

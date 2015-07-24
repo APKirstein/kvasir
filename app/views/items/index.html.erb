@@ -1,53 +1,83 @@
-<div class="large-6 large-centered column">
-	<div class="table">
-		<h3>Eve time: <p id="time"></p></h3>
-		<table id="market_table">
-			<thead>
-				<tr>
-					<th>Station</th>
-					<th>Item</th>
-					<th>Buy Price</th>
-					<th>Sell Price</th>
-					<th>Data Date</th>
-					<% if current_user %>
-						<th>Kvasir Index</th>
-					<% end %>
-					<th>Add to MyItems</th>
-				</tr>
-			</thead>
-			<tbody>
-				<% @items.each do |item, value| %>
+<div class="row">
+	<div class="large-6 large-centered column">
+		<div class="search_table">
+			<h3>Search for Item by Name</h3>
+			<%= form_tag items_path, :method => 'get', :id => "items_search" do %>
+				<p>
+					<%= text_field_tag :search, params[:search] %>
+					<%= submit_tag "Search", :id => nil %>
+				</p>
+			<% end %>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="large-6 large-centered column">
+		<div class="table">
+			<h3>Eve time: <p id="time"></p></h3>
+			<table id="market_table">
+				<thead>
 					<tr>
-						<td id="regionid">Amarr</td>
-						<td id="name"><%= item.name %></td>
-						<td id="buy_price">Buy: <%= item.buy_price.round(2) %></td>
-						<td id="sell_price">Sell: <%= item.sell_price.round(2) %></td>
-						<td id="info_date">Date: <%= item.info_date %></td>
+						<th>Station</th>
+						<th>Item</th>
+						<th>Buy Price</th>
+						<th>Sell Price</th>
+						<th>Data Date</th>
 						<% if current_user %>
-							<td id="kvasir"><%= (item.sell_price - item.buy_price).to_i %></td>
+							<th>Kvasir Index</th>
+							<th>Add to MyItems</th>
 						<% end %>
-						<td>
-							<% unless @tracked_item.user_id == current_user.id %>
-								<%= form_for @tracked_item, html: { id: "button-#{item.id}" } do |f| %>
-
-									<%= f.hidden_field :user, value: current_user.id %>
-									<%= f.hidden_field :item, value: item.id %>
-
-									<%= f.submit "Add", id: "add-button" %>
-								<% end %>
-							<% end %>
-						</td>
 					</tr>
-				<% end %>
-			</tbody>
-		</table>
-	</div>
-	<div class="row">
-		<p><%= paginate @items %></p>
-	</div>
-	<div class="footer" id="footer">
-		<ul>
-			<li><%= link_to "Home", root_path %></li>
-		</ul>
+				</thead>
+				<tfoot>
+					<tr>
+						<th>Station</th>
+						<th>Item</th>
+						<th>Buy Price</th>
+						<th>Sell Price</th>
+						<th>Data Date</th>
+						<% if current_user %>
+							<th>Kvasir Index</th>
+							<th>Add to MyItems</th>
+						<% end %>
+					</tr>
+				</tfoot>
+				<tbody>
+					<% @items.each do |item, value| %>
+						<tr>
+							<td id="regionid">Amarr</td>
+							<td id="name"><%= item.name %></td>
+							<td id="buy_price">Buy: <%= item.buy_price.round(2) %></td>
+							<td id="sell_price">Sell: <%= item.sell_price.round(2) %></td>
+							<td id="info_date">Date: <%= item.info_date %></td>
+							<% if current_user %>
+								<td id="kvasir"><%= (item.sell_price - item.buy_price).to_i %></td>
+							<% end %>
+							<td>
+								<% if current_user %>
+									<% if item.users.include?(current_user) %>
+										<%= form_for @tracked_item, html: { class: "tracked", id: "button-#{item.id}" } do |f| %>
+
+											<%= f.hidden_field :user, value: current_user.id %>
+											<%= f.hidden_field :item, value: item.id %>
+
+											<%= f.submit "Add", id: "add-button" %>
+										<% end %>
+									<% end %>
+								<% end %>
+							</td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+		<div class="row">
+			<p><%= paginate @items %></p>
+		</div>
+		<div class="footer" id="footer">
+			<ul>
+				<li><%= link_to "Home", root_path %></li>
+			</ul>
+		</div>
 	</div>
 </div>

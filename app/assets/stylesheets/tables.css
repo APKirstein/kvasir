@@ -1,0 +1,20 @@
+table {
+  border-spacing: collapse;
+  border-color: #001f3f;
+}
+
+table thead {
+  background: #001f3f;
+}
+
+table tfoot {
+  background: #001f3f;
+}
+
+table thead tr th {
+  color: #FFFFFF;
+}
+
+table tfoot tr th {
+  color: #FFFFFF;
+}

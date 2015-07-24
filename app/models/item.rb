@@ -1,5 +1,6 @@
 class Item < ActiveRecord::Base
-  has_many :users
+  has_many :tracked_items
+  has_many :users, through: :tracked_items
 
   validates :name, presence: true
   validates :buy_price, presence: true

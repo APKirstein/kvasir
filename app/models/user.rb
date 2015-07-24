@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  has_many :items
+  has_many :tracked_items
+  has_many :items, through: :tracked_items
 
   validates :email, presence: true
   validates :username, presence: true, length: { minimum: 3 }

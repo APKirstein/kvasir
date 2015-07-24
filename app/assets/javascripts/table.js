@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $("form").submit(function(event) {
+  $("form.tracked").submit(function(event) {
     event.preventDefault();
 
     $form = $(event.currentTarget);

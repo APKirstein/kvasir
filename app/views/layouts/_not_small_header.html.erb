@@ -10,7 +10,6 @@
       <section class="top-bar-section">
 
         <ul class="right">
-          <li>Welcome</li>
           <%- if !current_user.nil? && current_user.admin? -%>
             <li class="has-dropdown">
               <%= link_to 'admin', '#' %>

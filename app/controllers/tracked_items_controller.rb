@@ -26,6 +26,13 @@ class TrackedItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @tracked_item = TrackedItem.find(params[:id])
+    @tracked_item.destroy
+    flash[:notice] = "Successfully deleted #{@tracked_item.item.name}!"
+    redirect_to tracked_items_path
+  end
+
   protected
 
   def tracked_params
