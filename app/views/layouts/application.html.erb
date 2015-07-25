@@ -4,6 +4,7 @@
   <title>Kvasir</title>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
+  <%= javascript_include_tag 'sorttable' %>
   <%= javascript_include_tag 'application' %>
 </head>
   <body>
@@ -18,7 +19,7 @@
 
           <section class="main-section">
             <div class="row">
-              <div class="large-12 large-centered columns text-center">
+              <div class="small-12 small-centered columns text-center">
                 <%= yield %>
               </div>
             </div>
@@ -27,8 +28,4 @@
         </div>
       </div>
     </section>
-
-    <%= yield :extra_footer %>
-
-  </body>
 </html>

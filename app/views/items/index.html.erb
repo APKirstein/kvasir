@@ -1,22 +1,21 @@
 <div class="row">
-	<div class="large-6 large-centered column">
+	<div class="large-6 text-centered large-centered column">
 		<div class="search_table">
-			<h3>Search for Item by Name</h3>
+			<h3 id="search">Search for Item by Name</h3>
 			<%= form_tag items_path, :method => 'get', :id => "items_search" do %>
 				<p>
 					<%= text_field_tag :search, params[:search] %>
-					<%= submit_tag "Search", :id => nil %>
+					<%= submit_tag "Search", class: "button tiny round", :id => nil %>
 				</p>
 			<% end %>
 		</div>
 	</div>
 </div>
 <div class="row">
-	<div class="large-6 large-centered column">
+	<div class="large-8 large-centered column">
 		<div class="table">
-			<h3>Eve time: <p id="time"></p></h3>
-			<table id="market_table">
-				<thead>
+			<table class="sortable">
+				<thead id="thead">
 					<tr>
 						<th>Station</th>
 						<th>Item</th>
@@ -29,7 +28,7 @@
 						<% end %>
 					</tr>
 				</thead>
-				<tfoot>
+				<tfoot id="tfoot">
 					<tr>
 						<th>Station</th>
 						<th>Item</th>
@@ -42,7 +41,7 @@
 						<% end %>
 					</tr>
 				</tfoot>
-				<tbody>
+				<tbody id="tbody">
 					<% @items.each do |item, value| %>
 						<tr>
 							<td id="regionid">Amarr</td>
@@ -55,13 +54,13 @@
 							<% end %>
 							<td>
 								<% if current_user %>
-									<% if item.users.include?(current_user) %>
+									<% if !item.users.include?(current_user) %>
 										<%= form_for @tracked_item, html: { class: "tracked", id: "button-#{item.id}" } do |f| %>
 
 											<%= f.hidden_field :user, value: current_user.id %>
 											<%= f.hidden_field :item, value: item.id %>
 
-											<%= f.submit "Add", id: "add-button" %>
+											<%= f.submit "Add", id: "add-button", class: "button tiny round" %>
 										<% end %>
 									<% end %>
 								<% end %>
@@ -73,11 +72,6 @@
 		</div>
 		<div class="row">
 			<p><%= paginate @items %></p>
-		</div>
-		<div class="footer" id="footer">
-			<ul>
-				<li><%= link_to "Home", root_path %></li>
-			</ul>
 		</div>
 	</div>
 </div>

@@ -1,20 +1,16 @@
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 table {
-  border-spacing: collapse;
-  border-color: #001f3f;
+  border-radius: 0.25em;
+  margin: 1em;
+  border-spacing: 0;
 }
 
-table thead {
-  background: #001f3f;
-}
-
-table tfoot {
-  background: #001f3f;
-}
-
-table thead tr th {
-  color: #FFFFFF;
-}
-
-table tfoot tr th {
-  color: #FFFFFF;
+.disabled td {
+  color: #4F5F64;
 }

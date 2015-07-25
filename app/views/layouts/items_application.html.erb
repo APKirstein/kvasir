@@ -29,6 +29,28 @@
       </section>
     </section>
 
-    <%= yield :extra_footer %>
+    <footer class="row">
+      <div class="small-12 columns">
+        <hr/>
+        <div class="row">
+          <div class="small-6 offset-3 small-centered columns">
+            <ul class="inline-list small-centered center-my-list">
+              <li>
+                <%= link_to "Home", root_path %>
+              </li>
+              <li>
+                <%= link_to "Items", items_path %>
+              </li>
+              <li>
+                <%= link_to "My Items", tracked_items_path %>
+              </li>
+              <li>
+                <%= link_to "Jita Undock", jita_path %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

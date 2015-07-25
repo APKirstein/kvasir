@@ -18,7 +18,7 @@ feature 'user visits items index', %{
     scenario 'user visits the items index' do
       sign_in_as(user)
       visit root_path
-      click_link("Market Data")
+      click_link("items")
 
       expect(page).to have_content("Kvasir Index")
     end
@@ -26,7 +26,7 @@ feature 'user visits items index', %{
     scenario 'user visits the items index' do
       sign_in_as(user)
       visit root_path
-      click_link("Market Data")
+      click_link("items")
 
       expect(page).to_not have_content("Sign In")
     end
@@ -35,14 +35,14 @@ feature 'user visits items index', %{
   context 'user is not logged in' do
     scenario 'visitor visits the items index' do
       visit root_path
-      click_link("Market Data")
+      click_link("items")
 
       expect(page).to_not have_content("Kvasir Index")
     end
 
     scenario 'visitor visits the items index' do
       visit root_path
-      click_link("Market Data")
+      click_link("items")
 
       expect(page).to have_content("Sign In")
     end

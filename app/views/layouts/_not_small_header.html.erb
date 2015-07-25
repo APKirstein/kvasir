@@ -9,6 +9,11 @@
 
       <section class="top-bar-section">
 
+        <ul class="text-center eve-time">
+          <li>
+            <h6>Eve Time: <h6 id="time"></h6></h6>
+          </li>
+        </ul>
         <ul class="right">
           <%- if !current_user.nil? && current_user.admin? -%>
             <li class="has-dropdown">

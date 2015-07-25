@@ -1,0 +1,71 @@
+body {
+  background: url(/assets/Destruction.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 1);
+}
+
+h6 {
+  color: #B6CA8C;
+  background-color: rgba(0, 0, 0, -100);
+  display: inline;
+}
+
+.eve-time li {
+  background: transparent;
+}
+
+#footer ul{
+  list-style-type: none;
+}
+
+#video {
+  margin-top: 150px;
+}
+
+#notice_wrapper {
+ position: absolute;
+ top: 0;
+ width: 100%;
+ z-index: 999;
+ background-color: rgba(136, 216, 211, 1);
+ .alert, .notice {
+   padding: .9rem 0;
+   text-align: center;
+   margin: 0;
+   font-size: 1rem;
+   font-weight: 600;
+   color: #ffffff;
+   letter-spacing: 1px;
+ }
+}
+
+#search {
+  color: #B6CA8C;
+  align: center;
+}
+
+#items_search {
+  margin: auto;
+  align: center;
+  width: 30%;
+}
+
+section.top-bar-section {
+  text-align: center;
+}
+
+ul.eve-time li {
+  float: none;
+  display: inline-block;
+  background: inherit;
+  h3 {
+    color: white;
+  }
+}
+
+.title-area {
+  position: relative;
+  z-index: 1;
+}
