@@ -13,6 +13,8 @@
  *= require_self
  *= require foundation_and_overrides
  *= require home
+ *= require markets
+ *= require tables
  */
 
 #notice_wrapper {
