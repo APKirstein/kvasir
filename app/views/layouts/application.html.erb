@@ -4,16 +4,18 @@
   <title>Kvasir</title>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
+  <%= javascript_include_tag 'sorttable' %>
   <%= javascript_include_tag 'application' %>
 </head>
   <body>
+
+    <%= render "layouts/flash" %>
 
     <section class="top-bar-section">
       <div class="off-canvas-wrap fixed" data-offcanvas>
         <div class="inner-wrap">
           <%= render "layouts/small_header" %>
           <%= render "layouts/not_small_header" %>
-          <%= render "layouts/flash" %>
 
           <section class="main-section">
             <div class="row">
@@ -26,8 +28,4 @@
         </div>
       </div>
     </section>
-
-
-    <%= yield :extra_footer %>
-  </body>
 </html>

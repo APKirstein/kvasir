@@ -1,0 +1,16 @@
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+table {
+  border-radius: 0.25em;
+  margin: 1em;
+  border-spacing: 0;
+}
+
+.disabled td {
+  color: #4F5F64;
+}
