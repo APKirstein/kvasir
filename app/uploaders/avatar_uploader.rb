@@ -1,4 +1,3 @@
-# encoding: utf-8
 class AvatarUploader < CarrierWave::Uploader::Base
   # Choose what kind of storage to use for this uploader:
   if Rails.env.production?
