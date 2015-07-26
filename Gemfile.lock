@@ -371,7 +371,6 @@ DEPENDENCIES
   httparty
   jbuilder (~> 2.0)
   jquery-rails
-  json
   kaminari
   launchy
   pg
