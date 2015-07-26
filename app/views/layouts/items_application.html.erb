@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Kvasir</title>
-  <%= stylesheet_link_tag 'new_application', media: 'all' %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
   <%= javascript_include_tag 'application' %>
 </head>
@@ -34,7 +34,7 @@
         <hr/>
         <div class="row">
           <div class="small-6 offset-3 small-centered columns">
-            <ul class="inline-list small-centered center-my-list">
+            <ul class="inline-list small-centered center-my-list" style="display:inline">
               <li>
                 <%= link_to "Home", root_path %>
               </li>
