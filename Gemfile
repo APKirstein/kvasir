@@ -54,10 +54,8 @@ gem 'faker', group: [:development, :test]
 gem "dotenv-rails", group: [:development, :test]
 gem 'shoulda-matchers', group: [:development, :test], require: false
 gem 'rails_12factor', group: :production
-gem 'dotenv-rails', group: :development
 gem 'devise'
 gem 'foundation-rails'
-gem 'json'
 gem 'carrierwave'
 gem 'fog'
 gem 'httparty'
