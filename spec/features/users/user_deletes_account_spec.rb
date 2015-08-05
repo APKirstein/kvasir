@@ -7,10 +7,10 @@ feature 'user deletes their account', %{
 } do
 
   # Acceptance Criteria
-  # [] When I'm signed in, I have the option to go to my "Edit Profile" page
+  # [x] When I'm signed in, I have the option to go to my "Edit Profile" page
   # and select a button to delete my account
-  # [] I receive a confirmation that my account has been cancelled
-  # [] And therefore, I am no longer signed into my account
+  # [x] I receive a confirmation that my account has been cancelled
+  # [x] And therefore, I am no longer signed into my account
 
   scenario 'user deletes account from the edit page' do
     user = FactoryGirl.create(:user)

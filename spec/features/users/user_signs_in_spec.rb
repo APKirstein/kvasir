@@ -5,6 +5,11 @@ feature 'user signs in', %Q{
   I want to sign in
   So that I can regain access to my account
 } do
+
+  # Acceptance Criteria:
+  # [x] - User signs in
+  # [x] - I see a flash message
+
   scenario 'specify valid credentials' do
     user = FactoryGirl.create(:user)
     sign_in_as(user)

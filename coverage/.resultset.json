@@ -16,7 +16,6 @@
         null
       ],
       "/Users/NocturnalReign/Dropbox/kvasir/app/uploaders/avatar_uploader.rb": [
-        null,
         1,
         null,
         1,
@@ -118,22 +117,6 @@
         null,
         null
       ],
-      "/Users/NocturnalReign/Dropbox/kvasir/app/controllers/items_controller.rb": [
-        1,
-        1,
-        null,
-        1,
-        8,
-        8,
-        0,
-        null,
-        8,
-        null,
-        8,
-        null,
-        null,
-        null
-      ],
       "/Users/NocturnalReign/Dropbox/kvasir/app/controllers/admin/users_controller.rb": [
         1,
         1,
@@ -166,8 +149,24 @@
         null,
         null,
         null
+      ],
+      "/Users/NocturnalReign/Dropbox/kvasir/app/controllers/items_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        8,
+        8,
+        0,
+        null,
+        8,
+        null,
+        8,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1437844155
+    "timestamp": 1438115612
   }
 }
