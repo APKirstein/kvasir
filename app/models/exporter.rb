@@ -3,12 +3,8 @@ module Exporter
   class << self
     attr_accessor :time
 
-    def initialize(time=Time.now)
-      @time = time - 1.hour
-    end
-
     def import
-      items = Item.where("created_at: >= @time")
+      items = Item.where('created_at >= :hour_ago', :hour_ago => Time.now - 1.hour)
 
       items.each do |item|
         Archive.create(

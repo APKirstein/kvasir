@@ -1,6 +1,6 @@
-namespace :archives do
+namespace :archive do
   desc "Export item table to history"
-  task :exporter => environment do
+  task :exporter => :environment do
     Exporter.import
     Exporter.remake
   end
