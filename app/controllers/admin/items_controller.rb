@@ -2,7 +2,7 @@ module Admin
   class ItemsController < ApplicationController
     before_filter :authorize_admin!
     def index
-      @items = Item.all.page(params[:page])
+      @items = Item.order(info_date: :DESC).page(params[:page])
     end
 
     def destroy
